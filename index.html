@@ -156,6 +156,38 @@
   .res-list li strong{font-weight:800;}
   .res-list li span.detail{display:block;color:var(--muted);margin-top:2px;font-size:0.82rem;}
 
+  .todo-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+  .todo-list li{border:2px solid var(--ink);border-radius:8px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px;background:var(--card-bg);cursor:pointer;font-size:0.88rem;line-height:1.45;-webkit-tap-highlight-color:transparent;}
+  .todo-list li.done{opacity:0.45;}
+  .todo-list li.done strong{text-decoration:line-through;}
+  .todo-list li .check{width:22px;height:22px;flex-shrink:0;margin-top:1px;border:2px solid var(--ink);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;}
+  .todo-list li.done .check{background:var(--ink);color:#fff;}
+  .todo-list li strong{font-weight:800;}
+  .todo-list li span.detail{display:block;color:var(--muted);margin-top:2px;font-size:0.82rem;}
+
+  /* Passeios */
+  .tour-card{border:2px solid var(--ink);border-radius:10px;padding:16px;background:var(--card-bg);margin-bottom:14px;transition:transform 0.15s ease, box-shadow 0.15s ease;}
+  .tour-card:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink);}
+  .tour-card .day-tag{font-size:0.63rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);}
+  .tour-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;margin-top:4px;}
+  .tour-card .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:0.82rem;color:var(--muted);}
+  .tour-card .meta .rating{font-weight:700;color:var(--ink);}
+  .tour-card p.desc{font-size:0.86rem;color:var(--muted);margin-top:8px;}
+  .tour-card .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;flex-wrap:wrap;gap:8px;}
+  .tour-card .price{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--alpine-green);}
+  .tour-card .price span{font-size:0.7rem;font-family:'Plus Jakarta Sans',sans-serif;color:var(--muted);font-weight:600;}
+  .tour-card .book-btn{background:var(--ink);color:var(--paper);border:2px solid var(--ink);padding:8px 16px;border-radius:999px;font-size:0.8rem;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .tour-card .book-btn:hover{background:var(--orange);border-color:var(--orange);}
+  .tour-card .note{font-size:0.78rem;color:var(--muted);margin-top:8px;border-top:1px solid #e2e0d6;padding-top:8px;}
+
+  /* Dicas motorhome */
+  .tip-group{margin-bottom:22px;}
+  .tip-head{display:flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;margin-bottom:10px;}
+  .tip-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+  .tip-list li{border:2px solid var(--ink);border-radius:8px;padding:12px 14px;font-size:0.88rem;line-height:1.55;background:var(--card-bg);display:flex;gap:10px;align-items:flex-start;}
+  .tip-list li .num{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--orange);flex-shrink:0;min-width:22px;}
+  .tip-list li strong{font-weight:800;}
+
   footer{padding:30px 20px 60px;text-align:center;font-size:0.78rem;color:var(--muted);}
 
   /* Mapa */
@@ -253,13 +285,15 @@
 
 <nav class="tab-nav">
   <div class="tab-nav-inner">
-    <button class="active" onclick="showTab('roteiro', this)">Roteiro</button>
-    <button onclick="showTab('rota', this)">Rota</button>
-    <button onclick="showTab('mapa', this)">Mapa</button>
-    <button onclick="showTab('custos', this)">Custos</button>
-    <button onclick="showTab('comidas', this)">Comidas</button>
-    <button onclick="showTab('reservas', this)">Reservas</button>
-    <button onclick="showTab('decisoes', this)">Decisões</button>
+    <button class="active" id="navtab-roteiro" onclick="showTab('roteiro', this)">Roteiro</button>
+    <button id="navtab-rota" onclick="showTab('rota', this)">Rota</button>
+    <button id="navtab-mapa" onclick="showTab('mapa', this)">Mapa</button>
+    <button id="navtab-custos" onclick="showTab('custos', this)">Custos</button>
+    <button id="navtab-comidas" onclick="showTab('comidas', this)">Comidas</button>
+    <button id="navtab-reservas" onclick="showTab('reservas', this)">Reservas</button>
+    <button id="navtab-decisoes" onclick="showTab('decisoes', this)">Decisões</button>
+    <button id="navtab-dicas" onclick="showTab('dicas', this)">Dicas Motorhome</button>
+    <button id="navtab-passeios" onclick="showTab('passeios', this)">Passeios</button>
   </div>
 </nav>
 
@@ -591,7 +625,8 @@
       </ul>
     </div>
 
-    <p style="margin-top:10px;"><a class="maplink" href="#" onclick="showTab('decisoes', document.querySelector('.tab-nav-inner button:last-child')); return false;">📖 Ver por que o roteiro foi montado assim →</a></p>
+    <p style="margin-top:10px;"><a class="maplink" href="#" onclick="showTab('decisoes', document.getElementById('navtab-decisoes')); return false;">📖 Ver por que o roteiro foi montado assim →</a></p>
+    <p style="margin-top:6px;"><a class="maplink" href="#" onclick="showTab('dicas', document.getElementById('navtab-dicas')); return false;">🚐 Ver dicas de como usar o motorhome →</a></p>
   </div>
 
   <!-- TAB DECISÕES -->
@@ -608,6 +643,105 @@
       <li><span class="mark">✓</span><div><strong>Pericnik e Kozjak entraram no dia 25; Boka e Tolmin Gorge ficaram de fora do fixo.</strong><span class="why">Pericnik é quase sem desvio (na estrada antes do Vršič). Kozjak fica em Kobarid, sem desvio, e troca o lugar do canyoning opcional. Boka e Tolmin Gorge foram cortados por redundância (mais cachoeira e mais desfiladeiro) e por deixarem o dia mais pesado do que o necessário.</span></div></li>
       <li><span class="mark">✓</span><div><strong>Ritmo tranquilo a médio, com trilhas cedo pela manhã.</strong><span class="why">Perfil do casal prioriza paisagem, esporte leve e locais menos turísticos — evitar horários de pico em Vintgar e no lago.</span></div></li>
     </ul>
+  </div>
+
+  <!-- TAB DICAS MOTORHOME -->
+  <div class="tab-panel" id="tab-dicas">
+    <div class="section-title"><h2>COISAS A RESOLVER E PRATICIDADES</h2><p>O que precisa comprar/resolver antes de sair, e o que fazer no dia a dia com a Robeta Apollo (van pop-up, 6,36m). Toque pra marcar o que já resolveu.</p></div>
+
+    <div class="readiness" style="margin-bottom:20px;">
+      <div class="readiness-head"><span>Resolvido</span><span class="pct" id="todoPct">0%</span></div>
+      <div class="readiness-track"><div class="readiness-fill" id="todoFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="priority-group">
+      <div class="priority-head urgent">🔴 Antes de viajar</div>
+      <ul class="todo-list">
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Vinheta eletrônica (e-vinjeta)</strong><span class="detail">Obrigatória em rodovias/autoestradas da Eslovênia p/ veículos ≤3,5t. Confirmar com a locadora se já vem incluída — se não, comprar em evinjeta.dars.si (semanal ~€16-16,50). Sem ela: multa de €300-800.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>CNH válida (e verificar se precisa de Permissão Internacional de Dirigir)</strong><span class="detail">Depende da nacionalidade/tipo de CNH — confirmar exigência específica pra motorhome com a locadora.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Confirmar franquia do seguro do veículo</strong><span class="detail">Valor da franquia em caso de dano/perda — perguntar se dá pra reduzir com seguro adicional.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Levar dinheiro em espécie (euros)</strong><span class="detail">Seliše RV Parking (Bled) só aceita dinheiro. Bom ter uma reserva pra pontos assim.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Chip/eSIM com dados</strong><span class="detail">Pra navegação e checar disponibilidade dos campings em tempo real, inclusive em trecho de montanha com sinal fraco.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Líquido/sachês pro banheiro químico</strong><span class="detail">Se a van tiver banheiro cassete, confirmar se já vem com a locadora ou comprar num Mercator/supermercado local.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="priority-group">
+      <div class="priority-head important">🟡 Todo dia com a van</div>
+      <ul class="todo-list">
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Fechar e travar o teto pop-up antes de dirigir</strong><span class="detail">O erro mais comum — dirigir com o teto aberto danifica a estrutura. Sempre o último passo antes de sair.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Desconectar eletricidade e recolher degraus/apoios</strong><span class="detail">Se usou hookup no camping, tirar o cabo antes de arrancar.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Reabastecer água potável nos pontos de serviço</strong><span class="detail">Todos os campings e camper stops do roteiro têm — não esperar ficar vazio.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Despejar esgoto cinza/negro só em ponto oficial</strong><span class="detail">Nunca na natureza ou em bueiro de rua — esvaziar antes de dias de mais estrada (dia 25).</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Guardar tudo que pode voar antes de estrada de montanha</strong><span class="detail">Louça, garrafas, qualquer coisa solta — o Vršič tem curva de verdade.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Procurar terreno plano pra estacionar</strong><span class="detail">Zlatorog tem terreno irregular segundo avaliações — van torta também prejudica a geladeira.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="priority-group">
+      <div class="priority-head later">🟢 Na devolução (dia 26, até 10h)</div>
+      <ul class="todo-list">
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Tanque cheio</strong><span class="detail">Abastecer na noite anterior em Bohinj, não deixar pra última hora.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Esvaziar os esgotos antes de devolver</strong><span class="detail">Algumas locadoras cobram taxa se entregar com os tanques cheios.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Conferir compartimentos externos</strong><span class="detail">Guarda-objetos embaixo da van, além do interior.</span></div></li>
+        <li onclick="toggleTodo(this)"><span class="check"></span><div><strong>Fotos do veículo na devolução</strong><span class="detail">Mesma cautela de quando pegaram a van na retirada.</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TAB PASSEIOS -->
+  <div class="tab-panel" id="tab-passeios">
+    <div class="section-title"><h2>OPÇÕES DE PASSEIO</h2><p>Tours com guia pra complementar as atividades por conta própria do roteiro. Preços e avaliações puxados do GetYourGuide em jul/2026 — confira no link antes de reservar, pode variar por data.</p></div>
+
+    <div class="tour-card">
+      <span class="day-tag">Dia 25 · Soča Valley</span>
+      <h3>Rio Soča: caiaque para todos os níveis, com fotos</h3>
+      <div class="meta"><span class="rating">⭐ 4,8</span><span>165 avaliações</span><span>2,5h (1,5h no rio)</span><span>Máx. 8 pessoas</span></div>
+      <p class="desc">Seções fáceis pra iniciante e mais técnicas pra quem já manja. Fotos inclusas, guia credenciado, equipamento completo. Ponto de encontro em Čezsoča.</p>
+      <div class="price-row">
+        <span class="price">~€74 <span>por pessoa</span></span>
+        <a class="book-btn" href="https://www.getyourguide.com/pt-br/bovec-l32330/rio-soca-kayaking-para-todos-os-niveis-fotos-incluidas-t406051/" target="_blank">Ver no GetYourGuide</a>
+      </div>
+      <p class="note">⚠️ Licença do rio (€15/pessoa) não incluída no preço. Não indicado para menores de 10, grávidas ou +70 anos.</p>
+    </div>
+
+    <div class="tour-card">
+      <span class="day-tag">Dia 25 · Soča Valley</span>
+      <h3>Rafting no Rio Isonzo/Soča, com guia e fotos</h3>
+      <div class="meta"><span class="rating">⭐ 5,0</span><span>6 avaliações</span><span>3h (2h no rio)</span><span>Máx. 9 pessoas</span></div>
+      <p class="desc">Mistura de água calma e corredeiras, de Srpenica a Trnovo. Saídas às 8h30, 11h30 e 15h30 — dá pra encaixar bem antes de seguir pra Kobarid. Idade de 5 a 80 anos.</p>
+      <div class="price-row">
+        <span class="price">~€53 <span>por pessoa</span></span>
+        <a class="book-btn" href="https://www.getyourguide.com/pt-br/bovec-l32330/-t1376207/" target="_blank">Ver no GetYourGuide</a>
+      </div>
+      <p class="note">⚠️ Ingresso do rio (~€22/pessoa) não incluído — mencionado como obrigatório em todas as operadoras.</p>
+    </div>
+
+    <div class="tour-card">
+      <span class="day-tag">Dias 22-23 · Bled</span>
+      <h3>Caiaque transparente no Lago Bled</h3>
+      <div class="meta"><span class="rating">⭐ 4,9</span><span>286 avaliações</span><span>1,5h</span><span>Ritmo tranquilo</span></div>
+      <p class="desc">Passeio mais contemplativo que esportivo — vista do castelo, da ilha e dos Alpes através do fundo transparente do caiaque. Tem opção ao pôr do sol com luzes subaquáticas.</p>
+      <div class="price-row">
+        <span class="price">~€47 <span>por pessoa</span></span>
+        <a class="book-btn" href="https://www.getyourguide.com/pt-br/bled-l1336/bled-passeio-guiado-de-caiaque-em-um-caiaque-transparente-t431732/" target="_blank">Ver no GetYourGuide</a>
+      </div>
+      <p class="note">⚠️ Não indicado para menores de 6, +65 anos, grávidas ou pessoas acima de 95kg. Cada caiaque é compartilhado por 2 pessoas.</p>
+    </div>
+
+    <div class="tour-card">
+      <span class="day-tag">Dias 22-24 · Bled/Bohinj</span>
+      <h3>Canyoning saindo de Bled, no Vale de Bohinj</h3>
+      <div class="meta"><span class="rating">⭐ 4,9</span><span>171 avaliações</span><span>3,5h</span><span>Busca no hotel inclusa</span></div>
+      <p class="desc">Apesar do nome, o canyon em si fica no Vale de Bohinj — o guia busca em Bled (raio de 5km) e leva de van. Desce por rochas, pula em cachoeiras, nada em poças de água da montanha.</p>
+      <div class="price-row">
+        <span class="price">~€79 <span>por pessoa</span></span>
+        <a class="book-btn" href="https://www.getyourguide.com/pt-br/bled-l1336/canyoning-lago-bled-eslovenia-t75504/" target="_blank">Ver no GetYourGuide</a>
+      </div>
+      <p class="note">⚠️ Mínimo 10 anos e 1,40m de altura. Como parte do trajeto já é em Bohinj, dá pra considerar fazer nos dias em Bohinj em vez de Bled.</p>
+    </div>
+
+    <div class="alert-card"><span class="icon">💡</span><p><strong>Cuidado com sobreposição:</strong> o canyoning saindo de Bled na verdade acontece em Bohinj — se decidirem fazer, dá pra pensar nele como atividade extra do dia 24 (Bohinj) em vez de somar com as atividades já planejadas de Vogel/Savica/caiaque no lago, pra não lotar o dia.</p></div>
   </div>
 
 </main>
@@ -718,8 +852,24 @@
     setTimeout(function(){ map.invalidateSize(); }, 100);
   }
 
+  function toggleTodo(el){
+    el.classList.toggle('done');
+    const check = el.querySelector('.check');
+    check.textContent = el.classList.contains('done') ? '✓' : '';
+    updateTodoProgress();
+  }
+
+  function updateTodoProgress(){
+    const all = document.querySelectorAll('.todo-list li');
+    const done = document.querySelectorAll('.todo-list li.done');
+    const pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+    document.getElementById('todoPct').textContent = pct + '%';
+    document.getElementById('todoFill').style.width = pct + '%';
+  }
+
   updateReadiness();
   updateFoodProgress();
+  updateTodoProgress();
 </script>
 
 </body>
