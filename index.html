@@ -223,6 +223,10 @@
   .status{display:inline-flex;align-items:center;gap:4px;font-size:0.62rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;margin-bottom:6px;}
   .status-confirmed{background:#e3f2e9;color:var(--alpine-green);border:2px solid var(--alpine-green);}
   .status-pending{background:#fff6df;color:#8a6200;border:2px solid var(--alert);}
+  .status-done{background:var(--alpine-green);color:#fff;border:2px solid var(--alpine-green);}
+  .status-skipped{background:#f0f0ec;color:var(--muted);border:2px solid #c9c6ba;}
+  .card.skipped{opacity:0.6;}
+  .card.skipped h3{text-decoration:line-through;}
 
   /* Readiness bar */
   .readiness{border:2px solid var(--ink);border-radius:10px;padding:16px 18px;margin-bottom:18px;background:var(--card-bg);}
@@ -391,45 +395,29 @@
       <div class="day-acc-head" onclick="toggleDay(this)">
         <div class="info">
           <span class="num">23</span>
-          <div class="titles"><h3>BLED → SOČA VALLEY</h3><div class="sub">23 jul · quinta · Dorme: a definir perto de Soča</div></div>
+          <div class="titles"><h3>BLED → ITÁLIA → SOČA VALLEY</h3><div class="sub">23 jul · quinta · Rota real: via Tarvisio e Lagos de Fusine</div></div>
         </div>
         <div class="badges"><span class="chev">▾</span></div>
       </div>
       <div class="day-acc-body">
-        <div class="mini-label">MANHÃ EM BLED<div class="line"></div></div>
+        <div class="alert-card"><span class="icon">📝</span><p><strong>O que rolou de verdade:</strong> Vintgar Gorge ficou de fora (lotado), e a subida pelo Vršič também não aconteceu — no lugar, vocês seguiram pela Itália (Tarvisio, Passo Predil) até os Lagos de Fusine, e de lá pro Vale do Soča. Rota diferente da planejada, mas ótima mesmo assim.</p></div>
+
         <div class="grid">
-          <div class="card"><span class="tag">Cedo, sem gente</span><h3>Vintgar Gorge</h3><p>Ir logo pela manhã — lotado depois das 10h.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vintgar+Gorge+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">Clássico</span><h3>Barco pletna até a ilha</h3><p>Remada tradicional até a igreja no meio do lago.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Pletna+boat+Bled+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card skipped"><span class="status status-skipped">⏭️ Pulado (lotado)</span><span class="tag">Não rolou</span><h3>Vintgar Gorge</h3><p>Ficou de fora por estar muito cheio.</p></div>
         </div>
 
-        <div class="mini-label">RESTAURANTES<div class="line"></div></div>
+        <div class="mini-label">ROTA REAL — VIA ITÁLIA<div class="line"></div></div>
         <div class="grid">
-          <div class="card restaurant"><span class="tag">De passagem</span><h3>Gostilna local no centro</h3><p>Cozinha caseira · 💶 € · Prato: ričet ou sopa do dia.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=gostilna+Bled+centre+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card"><span class="status status-done">✅ Feito</span><span class="tag">Passagem de fronteira</span><h3>Tarvisio (Itália) → Passo Predil</h3><p>Rota alternativa ao Vršič, passando pelo lado italiano dos Alpes Julianos.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Tarvisio+Italy" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card"><span class="status status-done">✅ Feito</span><span class="tag">Destaque da rota</span><h3>Lagos de Fusine (Laghi di Fusine)</h3><p>Dois lagos glaciais na base do Monte Mangart, do lado italiano — parada que não estava no plano original e valeu a pena.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Laghi+di+Fusine+Italy" target="_blank">📍 Ver no Maps</a></div>
         </div>
 
-        <div class="alert-card"><span class="icon">🏔️</span><p><strong>Tarde: subida pelo Passo Vršič.</strong> A Robeta Apollo (6,36m, van) está na categoria que passa bem nas curvas fechadas — dirigir devagar, sem pressa.</p></div>
-
-        <div class="mini-label">TARDE — SUBIDA PELO PASSO VRŠIČ<div class="line"></div></div>
+        <div class="mini-label">ONDE DORMIU NO SOČA VALLEY<div class="line"></div></div>
         <div class="grid">
-          <div class="card"><span class="tag">No caminho</span><h3>Cachoeira Pericnik</h3><p>Direto na estrada antes de Kranjska Gora — cai em queda livre, ~20-30min de caminhada fácil até a base.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Pericnik+Waterfall+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">No caminho</span><h3>Lago Jasna</h3><p>Parada rápida ao pé do passo — águas turquesa, 30min de caminhada ao redor se der tempo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Lake+Jasna+Kranjska+Gora+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">50 curvas</span><h3>Passo Vršič (1.611m)</h3><p>Dirigir devagar, marcha baixa, sem pressa.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vrsic+Pass+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">Parada rápida</span><h3>Capela Russa (curva nº 8)</h3><p>Construída por prisioneiros russos na 1ª Guerra — pequena parada de história no meio da subida.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Russian+Chapel+Vrsic+Pass+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">Trilha curta</span><h3>Nascente do Rio Soča</h3><p>Perto da curva nº 49 — trilha curta até a nascente esmeralda do rio.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Source+of+the+Soca+River+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-        </div>
-        <div class="alert-card"><span class="icon">🚏</span><p><strong>Novo esquema de tráfego verão 2026:</strong> estacionamento limitado no topo do passo entre 1 jun e 30 set, com shuttle gratuito Kranjska Gora ↔ Bovec pra quem preferir não subir de veículo próprio. Vale checar o site oficial (promet.si) antes de ir.</p></div>
-
-        <div class="mini-label">ONDE DORMIR NO SOČA VALLEY<div class="line"></div></div>
-        <div class="alert-card"><span class="icon">📝</span><p><strong>Fica com vocês escolher o camping.</strong> Todas as opções abaixo aceitam motorhome com eletricidade — nenhuma tem cadeia de emergência definida ainda, então vale ter um segundo nome na manga antes de ir.</p></div>
-        <div class="grid">
-          <div class="card sleep"><span class="tag">Recomendado · Perto do Kozjak</span><h3>Camp Koren (Kobarid)</h3><p>Eco-friendly, à beira do rio, pertinho do Museu de Kobarid e da trilha da cachoeira Kozjak que já está no roteiro.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Camp+Koren+Kobarid+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Alternativa · Confluência dos rios</span><h3>Camp Liza (Bovec)</h3><p>Na confluência do Soča com o Koritnica. Zonas 1-4 pra motorhome, com eletricidade, água e despejo de esgoto.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Camp+Liza+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Alternativa · Central em Bovec</span><h3>Camping Bovec (Alpi Center)</h3><p>Pasto no centro de Bovec, fácil acesso a pé pra restaurantes e operadoras de rafting.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Alpi+Center+Camping+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Alternativa · Maior da região</span><h3>Camping Soča</h3><p>~10km rumo a Trenta, o maior e mais equipado da região — aceita motorhome até 8m.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Camping+Soca+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Mais prático · Estacionamento</span><h3>Camper Stop PZA Bovec</h3><p>Estacionamento oficial perto do teleférico de Kanin, não é camping completo. Eletricidade, água, despejo de esgoto e wi-fi. Máx. 48h — ~€20/24h ou €30/36h. Ainda dá 10% de desconto nas atividades esportivas de Bovec.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kanin+cable+car+parking+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card sleep"><span class="status status-done">✅ Feito</span><span class="tag">Confirmado</span><h3>Camping no Vale do Soča</h3><p>Chegada via Passo Predil em vez do Vršič.</p></div>
         </div>
 
-        <p class="transport-line">Motorhome · Bled → Kranjska Gora → Vršič → Soča Valley, ~70-90km, ~2h-2h30 com paradas.</p>
+        <p class="transport-line">Motorhome · Bled → Tarvisio (Itália) → Passo Predil → Lagos de Fusine → Vale do Soča. Rota real, sem passar pelo Vršič.</p>
       </div>
     </div>
 
@@ -438,38 +426,29 @@
       <div class="day-acc-head" onclick="toggleDay(this)">
         <div class="info">
           <span class="num">24</span>
-          <div class="titles"><h3>SOČA VALLEY → BOHINJ</h3><div class="sub">24 jul · sexta · Dorme: Camp Danica (Bohinj)</div></div>
+          <div class="titles"><h3>SOČA VALLEY → BOHINJ</h3><div class="sub">24 jul · sexta · Dorme: Soriška Planina (Bohinj)</div></div>
         </div>
         <div class="badges"><span class="chev">▾</span></div>
       </div>
       <div class="day-acc-body">
         <div class="mini-label">ATIVIDADES EM BOVEC/KOBARID<div class="line"></div></div>
         <div class="grid">
-          <div class="card"><span class="status status-pending">⚠️ Pendente</span><span class="tag">Água turquesa</span><h3>Rafting ou caiaque no Rio Soča</h3><p>Reservar horário que garanta tempo pra seguir viagem à tarde.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Soca+River+rafting+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">Trilha ~1h-1h30</span><h3>Cachoeira Kozjak</h3><p>Em Kobarid, sem desvio de rota. Passarelas de madeira até uma poça esmeralda dentro de um anfiteatro de rocha.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kozjak+Waterfall+Kobarid+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">História + vila</span><h3>Kobarid</h3><p>Vila pequena, museu da Primeira Guerra.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kobarid+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card"><span class="status status-done">✅ Feito · Destaque da viagem!</span><span class="tag">Água + adrenalina</span><h3>Canyoning com Soča Splash</h3><p>Agência local em Bovec, cânion Sušec — a atividade mais marcante do dia.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=So%C4%8Da+Splash+Bovec+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card skipped"><span class="status status-skipped">⏭️ Não fizeram</span><span class="tag">Não rolou</span><h3>Rafting ou caiaque no Rio Soča</h3><p>Ficou de fora — canyoning tomou o lugar como atividade de água do dia.</p></div>
+          <div class="card"><span class="status status-pending">🚶 Parcial</span><span class="tag">Trilha ~1h-1h30</span><h3>Cachoeira Kozjak</h3><p>Foram até a parte da floresta, mas com o horário já avançado e ainda faltando ~45min de trilha, decidiram voltar sem chegar na cachoeira.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kozjak+Waterfall+Kobarid+Slovenia" target="_blank">📍 Ver no Maps</a></div>
         </div>
 
-        <div class="mini-label">ALMOÇO EM KOBARID<div class="line"></div></div>
+        <div class="mini-label">REFEIÇÃO EM KOBARID<div class="line"></div></div>
         <div class="grid">
-          <div class="card restaurant"><span class="tag">Comida caseira</span><h3>Gostilna Breza</h3><p>Cozinha tradicional em Kobarid · 💶 €€ · Prato: kobariški štruklji (sobremesa) ou truta local. Sem necessidade de reserva.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Gostilna+Breza+Kobarid+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card restaurant"><span class="status status-done">✅ Feito</span><span class="tag">Nome não anotado</span><h3>Outro restaurante em Kobarid</h3><p>Trocaram a Gostilna Breza por outro lugar — vale voltar aqui e completar o nome se lembrarem depois.</p></div>
         </div>
 
-        <div class="mini-label">ONDE DORMIR EM BOHINJ<div class="line"></div></div>
-        <div class="alert-card"><span class="icon">💡</span><p><strong>Camp Danica no lugar do Zlatorog nessa rota.</strong> Como agora vocês ficam só 2 noites em Bohinj (24-25), fica abaixo do mínimo de 3 noites que o Zlatorog exige pra reservar online na alta temporada. O Danica aceita estadias mais curtas com tranquilidade — 700 vagas, à beira do rio, poucos minutos do centro.</p></div>
+        <div class="mini-label">ONDE DORMIU EM BOHINJ<div class="line"></div></div>
         <div class="grid">
-          <div class="card sleep"><span class="tag">Recomendado · 2 noites</span><h3>Camp Danica (Bohinjska Bistrica)</h3><p>Camping tradicional perto do centro, à beira do rio, aberto o ano todo, 700 vagas.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Camp+Danica+Bohinjska+Bistrica+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Alternativa · Se topar o risco</span><h3>Camp Bohinj (Zlatorog) — Non-parcelled Zone</h3><p>Zona sem reserva, só walk-in — mais vibes (à beira do lago), mas sem garantia de vaga.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Camp+Bohinj+Zlatorog+Ukanc+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Alternativa · Mais prático</span><h3>Camper Stop Senožeta (Srednja vas)</h3><p>16 vagas, eletricidade, despejo de águas, água potável.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Seno%C5%BEeta+camper+stop+Srednja+vas+Bohinj+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card sleep"><span class="status status-done">✅ Feito</span><span class="tag">Confirmado · Perto do Slatnik</span><h3>Soriška Planina</h3><p>Camping/estação de esqui — base perfeita pra trilha do Slatnik + Lajnar no dia seguinte.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Soriska+planina+camping+Slovenia" target="_blank">📍 Ver no Maps</a></div>
         </div>
 
-        <div class="mini-label">🆘 SE NADA TIVER VAGA<div class="line"></div></div>
-        <div class="grid">
-          <div class="card sleep"><span class="tag">Plano C</span><h3>Estacionamento de emergência — Kozji hrbet</h3><p>Área oficial de parada temporária em Bohinjska Bistrica, aberta na alta temporada (1 jun-30 set). Limite de 12h.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kozji+hrbet+motorhome+parking+Bohinjska+Bistrica+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card sleep"><span class="tag">Plano D</span><h3>Camping Soriška Planina</h3><p>Terceiro camping da região de Bohinj, menor e menos procurado.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Soriska+planina+camping+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-        </div>
-
-        <p class="transport-line">Motorhome · Soča Valley → Bohinj via Tolmin, ~65km, ~1h40.</p>
+        <p class="transport-line">Motorhome · Soča Valley → Bohinj (Soriška Planina), via Tolmin.</p>
       </div>
     </div>
 
@@ -478,16 +457,19 @@
       <div class="day-acc-head" onclick="toggleDay(this)">
         <div class="info">
           <span class="num">25</span>
-          <div class="titles"><h3>BOHINJ</h3><div class="sub">25 jul · sábado · Base fixa</div></div>
+          <div class="titles"><h3>BOHINJ</h3><div class="sub">25 jul · sábado · Soriška Planina</div></div>
         </div>
         <div class="badges"><span class="chev">▾</span></div>
       </div>
       <div class="day-acc-body">
+        <div class="alert-card"><span class="icon">📝</span><p><strong>O que rolou de verdade:</strong> Vogel estava muito lotado, então trocaram pela trilha de cume Slatnik + Lajnar, saindo direto do Soriška Planina. Savica ficou de fora por falta de tempo.</p></div>
+
         <div class="mini-label">ATIVIDADES<div class="line"></div></div>
         <div class="grid">
-          <div class="card"><span class="tag">Esporte + vista</span><h3>Teleférico do Vogel + trilha</h3><p>Sobe rápido, desce em trilha com vista dos Alpes Julianos.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vogel+cable+car+Bohinj+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card skipped"><span class="status status-skipped">⏭️ Pulado (lotado)</span><span class="tag">Não rolou</span><h3>Teleférico do Vogel + trilha</h3><p>Muito cheio no dia.</p></div>
+          <div class="card"><span class="status status-done">✅ Feito</span><span class="tag">Trilha de cume</span><h3>Slatnik + Lajnar</h3><p>Cordilheira logo acima do Soriška Planina, sem a multidão do Vogel — troca que valeu a pena.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Slatnik+Lajnar+trail+Soriska+planina+Slovenia" target="_blank">📍 Ver no Maps</a></div>
+          <div class="card skipped"><span class="status status-skipped">⏭️ Sem tempo</span><span class="tag">Não rolou</span><h3>Cachoeira Savica</h3><p>Faltou tempo no dia.</p></div>
           <div class="card"><span class="tag">Água</span><h3>Caiaque ou SUP no Lago Bohinj</h3><p>Muito mais vazio que Bled.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Lake+Bohinj+kayak+rental+Slovenia" target="_blank">📍 Ver no Maps</a></div>
-          <div class="card"><span class="tag">Fácil</span><h3>Cachoeira Savica</h3><p>Trilha curta, fim de tarde tranquilo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Savica+Waterfall+Slovenia" target="_blank">📍 Ver no Maps</a></div>
         </div>
         <div class="mini-label">RESTAURANTES<div class="line"></div></div>
         <div class="grid">
@@ -542,11 +524,11 @@
     <table class="route-table">
       <tr><th>Trecho</th><th>Distância</th><th>Tempo</th><th>Dia</th><th></th></tr>
       <tr><td>Ljubljana → Bled</td><td>50 km</td><td>~45 min</td><td>22/07</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Ljubljana+Slovenia&destination=Bled+Slovenia&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
-      <tr><td>Bled → Soča Valley (via Passo Vršič)</td><td>~70-90 km</td><td>~2h-2h30 c/ paradas</td><td>23/07</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Bled+Slovenia&destination=Bovec+Slovenia&waypoints=Vr%C5%A1i%C4%8D+Pass+Slovenia&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
-      <tr><td>Soča Valley → Bohinj (via Tolmin)</td><td>~65 km</td><td>~1h40</td><td>24/07</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Bovec+Slovenia&destination=Bohinjska+Bistrica+Slovenia&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
+      <tr><td>Bled → Tarvisio (Itália) → Lagos de Fusine → Soča Valley</td><td>~100-120 km</td><td>~2h30-3h c/ paradas</td><td>23/07 (real)</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Bled+Slovenia&destination=Bovec+Slovenia&waypoints=Laghi+di+Fusine+Italy&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
+      <tr><td>Soča Valley → Bohinj (Soriška Planina, via Tolmin)</td><td>~65 km</td><td>~1h40</td><td>24/07</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Bovec+Slovenia&destination=Soriska+Planina+Slovenia&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
       <tr><td>Bohinj → Ljubljana</td><td>55 km</td><td>~1h</td><td>26/07</td><td><a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Bohinjska+Bistrica+Slovenia&destination=Ljubljana+Slovenia&travelmode=driving" target="_blank">🗺️ Maps</a></td></tr>
     </table>
-    <div class="alert-card" style="margin-top:16px;"><span class="icon">📅</span><p><strong>Rota reestruturada:</strong> Bled → Soča Valley direto (via Vršič, dia 23) → Bohinj (via Tolmin, dia 24) → Ljubljana (dia 26). Isso troca o antigo day trip exaustivo por dois dias mais tranquilos, com pernoite de verdade no Soča.</p></div>
+    <div class="alert-card" style="margin-top:16px;"><span class="icon">📝</span><p><strong>Rota real ≠ rota planejada:</strong> em vez do Vršič, vocês foram por Tarvisio (Itália) e pelos Lagos de Fusine — rota alternativa que não estava no plano original, mas rendeu boas fotos. Bohinj também mudou: dormiram no Soriška Planina em vez do Danica/Zlatorog.</p></div>
   </div>
 
   <!-- TAB MAPA -->
@@ -558,6 +540,7 @@
       <span><span class="dot" style="background:#1a7a8c"></span> Onde dormir</span>
       <span><span class="dot" style="background:#ff4500"></span> Restaurante</span>
     </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:8px;">✅ = feito · ⏭️ = pulado · 🚶 = parcial · sem prefixo = ainda no plano ou opção de referência</p>
   </div>
 
   <!-- TAB COMIDAS -->
@@ -678,11 +661,11 @@
     </div>
 
     <div class="priority-group">
-      <div class="priority-head urgent">🔴 Urgente — reservar logo</div>
+      <div class="priority-head urgent">🔴 Já resolvido (registro)</div>
       <ul class="res-list">
-        <li class="urgent" onclick="toggleRes(this)"><span class="check"></span><div><strong>Reservar rafting/caiaque no Rio Soča</strong><span class="detail">Horário que garanta tempo de seguir viagem à tarde pra Bohinj.</span></div></li>
-        <li class="urgent" onclick="toggleRes(this)"><span class="check"></span><div><strong>Escolher e reservar camping no Vale do Soča</strong><span class="detail">Opções: Camp Koren (Kobarid, perto do Kozjak), Camp Liza (Bovec), Camping Bovec/Alpi Center, Camping Soča. Fica com vocês decidir.</span></div></li>
-        <li class="urgent" onclick="toggleRes(this)"><span class="check"></span><div><strong>Reservar Camp Danica em Bohinj (2 noites, 24-25/07)</strong><span class="detail">Recomendado no lugar do Zlatorog, que exige mínimo de 3 noites pra reservar online na alta temporada. Se quiser arriscar o Zlatorog mesmo assim, é só via Non-parcelled Zone, sem reserva garantida.</span></div></li>
+        <li class="urgent done" onclick="toggleRes(this)"><span class="check">✓</span><div><strong>Atividade de água no Soča</strong><span class="detail">Fizeram canyoning com Soča Splash em vez de rafting/caiaque — ver aba Passeios.</span></div></li>
+        <li class="urgent done" onclick="toggleRes(this)"><span class="check">✓</span><div><strong>Pernoite no Vale do Soča</strong><span class="detail">Resolvido no dia — chegaram via Lagos de Fusine.</span></div></li>
+        <li class="urgent done" onclick="toggleRes(this)"><span class="check">✓</span><div><strong>Pernoite em Bohinj</strong><span class="detail">Ficaram no Soriška Planina em vez de Camp Danica/Zlatorog — ver aba Decisões.</span></div></li>
       </ul>
     </div>
 
@@ -698,8 +681,7 @@
     <div class="priority-group">
       <div class="priority-head later">🟢 Pode resolver lá / é opcional</div>
       <ul class="res-list">
-        <li class="later" onclick="toggleRes(this)"><span class="check"></span><div><strong>Checar esquema de tráfego do Vršič antes de ir</strong><span class="detail">Estacionamento limitado no topo (jun-set 2026) e shuttle gratuito — conferir promet.si perto da data.</span></div></li>
-        <li class="later" onclick="toggleRes(this)"><span class="check"></span><div><strong>Boka Waterfall ou Tolmin Gorge, se sobrar tempo/energia</strong><span class="detail">Ficaram de fora do fixo por redundância com Savica/Kozjak (Boka) e Vintgar (Tolmin) — encaixar só se o dia render mais rápido que o previsto.</span></div></li>
+        <li class="later" onclick="toggleRes(this)"><span class="check"></span><div><strong>Confirmar nome do restaurante em Kobarid</strong><span class="detail">Trocaram a Gostilna Breza por outro lugar — vale anotar o nome se lembrarem, pra atualizar o roteiro depois.</span></div></li>
       </ul>
     </div>
 
@@ -724,9 +706,9 @@
       <p class="mitig"><strong>Mitigar:</strong> avisar o banco/emissor do cartão sobre as datas e países da viagem antes de sair. Levar um segundo cartão de banco diferente como backup.</p>
     </div>
     <div class="risk-card high">
-      <div class="risk-title">🌧️ Chuva forte ou neblina no dia do Vršič <span class="risk-badge">Rota</span></div>
-      <p>O passo tem 50 curvas fechadas — chuva forte ou neblina densa tornam a subida perigosa com um veículo do tamanho da van.</p>
-      <p class="mitig"><strong>Mitigar:</strong> checar previsão do tempo na noite anterior. Se estiver ruim, plano B é ir por Tolmin (mesma rota da volta) em vez do Vršič — mais longo, mas seguro em qualquer clima.</p>
+      <div class="risk-title">🌧️ Chuva forte ou neblina em estrada de montanha <span class="risk-badge">Rota</span></div>
+      <p>Na prática, o Vršič nem chegou a ser usado — a rota real passou pela Itália (Passo Predil), então esse risco específico não se aplicou. Mas vale manter em mente pra qualquer trecho de montanha em dias futuros.</p>
+      <p class="mitig"><strong>Mitigar:</strong> checar previsão do tempo antes de qualquer trecho de montanha. Ter sempre uma rota alternativa mais baixa em mente.</p>
     </div>
     <div class="risk-card high">
       <div class="risk-title">🚐 Pane ou acidente com a van <span class="risk-badge">Motorhome</span></div>
@@ -736,9 +718,8 @@
 
     <div class="mini-label">🟡 IMPACTO MÉDIO<div class="line"></div></div>
     <div class="risk-card medium">
-      <div class="risk-title">🏕️ Camping no Soça também lotado <span class="risk-badge">Pernoite</span></div>
-      <p>Bohinj tem uma cadeia de emergência inteira mapeada (Danica → Kozji hrbet → Soriška Planina). O Vale do Soça agora também tem uma opção prática de reserva — o Camper Stop PZA Bovec, perto do teleférico de Kanin.</p>
-      <p class="mitig"><strong>Mitigar:</strong> ao decidir o camping do Soça, ter o Camper Stop PZA Bovec como plano B garantido — é estacionamento, não camping bonito, mas resolve a noite se os 4 campings estiverem cheios.</p>
+      <div class="risk-title">🏕️ Camping no Soça também lotado <span class="risk-badge">Pernoite</span> <span class="risk-badge" style="background:var(--alpine-green);">✅ Não ocorreu</span></div>
+      <p>Na prática, vocês conseguiram pernoite no Vale do Soça sem problema, chegando via Lagos de Fusine.</p>
     </div>
     <div class="risk-card medium">
       <div class="risk-title">🎫 Restrições físicas nos passeios <span class="risk-badge">Passeios</span></div>
@@ -751,9 +732,8 @@
       <p class="mitig"><strong>Mitigar:</strong> se chegada for de manhã cedo, verificar guarda-volumes na estação/aeroporto ou um café pra esperar por perto do ponto de retirada.</p>
     </div>
     <div class="risk-card medium">
-      <div class="risk-title">⛴️ Rafting cancelado por excesso de água ou clima <span class="risk-badge">Passeios</span></div>
-      <p>Operadoras de rafting/caiaque podem cancelar ou remanejar horário se o nível do rio estiver perigoso.</p>
-      <p class="mitig"><strong>Mitigar:</strong> reservar com cancelamento gratuito até 24h antes (as opções na aba Passeios já têm essa política) e ter o Kozjak/Kobarid como plano B de dia se o rio estiver ruim.</p>
+      <div class="risk-title">⛴️ Rafting/caiaque cancelado por excesso de água ou clima <span class="risk-badge">Passeios</span> <span class="risk-badge" style="background:var(--alpine-green);">✅ Não se aplicou</span></div>
+      <p>No fim, vocês optaram por canyoning em vez de rafting/caiaque — esse risco específico não chegou a se aplicar.</p>
     </div>
     <div class="risk-card medium">
       <div class="risk-title">⛽ Abastecer combustível errado <span class="risk-badge">Motorhome</span></div>
@@ -781,18 +761,17 @@
 
   <!-- TAB DECISÕES -->
   <div class="tab-panel" id="tab-decisoes">
-    <div class="section-title"><h2>DECISÕES TOMADAS</h2><p>O porquê de cada escolha estrutural do roteiro — registro das premissas combinadas na hora de montar a viagem.</p></div>
+    <div class="section-title"><h2>DECISÕES TOMADAS</h2><p>Registro do que foi planejado e do que realmente aconteceu na viagem — os planos mudaram bastante no meio do caminho, e por boas razões.</p></div>
     <ul class="ledger-list">
-      <li><span class="mark">✓</span><div><strong>Rota reestruturada: Bled → Soča Valley → Bohinj, em vez de Bohinj fixo com day trip a Soča.</strong><span class="why">O day trip original (ida e volta no mesmo dia) virava uma maratona de estrada em cima de rafting e trilha. Separar em 2 dias, com pernoite de verdade no Soča, deixa o ritmo mais tranquilo.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Subida pelo Passo Vršič no dia 23, saindo de Bled.</strong><span class="why">A van (Robeta Apollo, 6,36m) é do tamanho certo pra passar bem nas curvas fechadas do passo. Ida de manhã/tarde, antes do movimento mais intenso.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Volta de Soča pra Bohinj via Tolmin, não pelo Vršič de novo.</strong><span class="why">Rota mais rápida e direta pra mudar de base, sem repetir o mesmo trecho de montanha duas vezes na mesma viagem.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Pernoite no Vale do Soča fica a critério do casal.</strong><span class="why">Opções levantadas (Camp Koren, Camp Liza, Camping Bovec/Alpi Center, Camping Soča) todas aceitam motorhome — decisão final não travava o resto do roteiro, então ficou em aberto.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Bohinj passou de 3 para 2 noites (24-25), com Camp Danica no lugar do Zlatorog como recomendação principal.</strong><span class="why">O Zlatorog exige mínimo de 3 noites pra reservar online na alta temporada — com só 2 noites, ele sai da jogada como escolha segura. O Danica aceita estadias mais curtas sem complicação.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Zlatorog continua como alternativa "se topar o risco", via Non-parcelled Zone.</strong><span class="why">Mais vibes (à beira do lago) pra quem não se importa de chegar sem reserva garantida — mas não é mais a recomendação padrão nessa nova estrutura.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Ljubljana fica para o dia 26, depois da devolução da van.</strong><span class="why">Sem motorhome pra estacionar, dá pra explorar a cidade a pé com calma, sem pressa de logística.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Pernoite sempre em área oficial de motorhome.</strong><span class="why">A Eslovênia pune pernoite fora de área designada com multa de €500/pessoa — vale em qualquer trecho da viagem, inclusive no Soča.</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Pericnik e Kozjak entraram no roteiro fixo; Boka e Tolmin Gorge ficaram de fora.</strong><span class="why">Pericnik é quase sem desvio (na estrada antes do Vršič). Kozjak fica em Kobarid, sem desvio, e trocou o lugar do canyoning opcional. Boka e Tolmin Gorge foram cortados por redundância (mais cachoeira e mais desfiladeiro).</span></div></li>
-      <li><span class="mark">✓</span><div><strong>Ritmo tranquilo a médio, com trilhas cedo pela manhã.</strong><span class="why">Perfil do casal prioriza paisagem, esporte leve e locais menos turísticos — evitar horários de pico em Vintgar e no lago.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Vintgar Gorge e Passo Vršič trocados pela rota via Itália (Tarvisio, Passo Predil, Lagos de Fusine).</strong><span class="why">Vintgar estava muito lotado. No lugar, a rota seguiu pela Itália até os Lagos de Fusine — não estava no plano original, mas rendeu boas fotos e menos gente.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Canyoning com Soča Splash no lugar de rafting/caiaque.</strong><span class="why">Foi a atividade de água escolhida no dia — destaque da viagem segundo o próprio relato.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Cachoeira Kozjak: só até a parte da floresta, sem chegar na queda d'água.</strong><span class="why">Horário já estava avançado e faltavam ~45min de trilha — decidiram voltar por segurança/tempo em vez de arriscar terminar no escuro.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Jantar em Kobarid trocado — não foi na Gostilna Breza.</strong><span class="why">Foram em outro lugar (nome não anotado no momento).</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Pernoite em Bohinj: Soriška Planina, não Camp Danica nem Zlatorog.</strong><span class="why">Camping/estação de esqui que serviu de base perfeita pra trilha do dia seguinte.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Teleférico do Vogel trocado pela trilha de cume Slatnik + Lajnar.</strong><span class="why">Vogel estava muito lotado no dia. A trilha saindo direto do Soriška Planina resolveu sem grande desvio.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Cachoeira Savica ficou de fora.</strong><span class="why">Faltou tempo no dia — não foi por lotação dessa vez.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Ljubljana ficou para o dia 26, depois da devolução da van.</strong><span class="why">Sem motorhome pra estacionar, dá pra explorar a cidade a pé com calma, sem pressa de logística.</span></div></li>
+      <li><span class="mark">✓</span><div><strong>Pernoite sempre em área oficial de motorhome.</strong><span class="why">A Eslovênia pune pernoite fora de área designada com multa de €500/pessoa — vale em qualquer trecho da viagem.</span></div></li>
     </ul>
   </div>
 
@@ -844,6 +823,16 @@
   <div class="tab-panel" id="tab-passeios">
     <div class="section-title"><h2>OPÇÕES DE PASSEIO</h2><p>Tours com guia pra complementar as atividades por conta própria do roteiro. Preços e avaliações puxados do GetYourGuide em jul/2026 — confira no link antes de reservar, pode variar por data.</p></div>
 
+    <div class="tour-card" style="border-color:var(--alpine-green);">
+      <span class="day-tag" style="color:var(--alpine-green);">✅ Feito · Dia 24 · Soča Valley</span>
+      <h3>Canyoning com Soča Splash (Cânion Sušec)</h3>
+      <div class="meta"><span class="rating">⭐ 100% recomendação</span><span>Agência local em Bovec</span><span>~2-3h c/ subida</span></div>
+      <p class="desc">Agência familiar de esportes ao ar livre em Bovec — cânion Sušec, com tobogãs naturais e saltos em poças. Foi o destaque da viagem, segundo vocês!</p>
+      <div class="price-row">
+        <a class="book-btn" href="https://www.socasplash.com/" target="_blank">socasplash.com</a>
+      </div>
+    </div>
+
     <div class="tour-card">
       <span class="day-tag">Dia 24 · Soča Valley</span>
       <h3>Rio Soča: caiaque para todos os níveis, com fotos</h3>
@@ -853,7 +842,7 @@
         <span class="price">~€74 <span>por pessoa</span></span>
         <a class="book-btn" href="https://www.getyourguide.com/pt-br/bovec-l32330/rio-soca-kayaking-para-todos-os-niveis-fotos-incluidas-t406051/" target="_blank">Ver no GetYourGuide</a>
       </div>
-      <p class="note">⚠️ Licença do rio (€15/pessoa) não incluída no preço. Não indicado para menores de 10, grávidas ou +70 anos.</p>
+      <p class="note">⏭️ Não fizeram — o canyoning tomou o lugar dessa atividade no dia. Licença do rio (€15/pessoa) não incluída no preço.</p>
     </div>
 
     <div class="tour-card">
@@ -865,7 +854,7 @@
         <span class="price">~€53 <span>por pessoa</span></span>
         <a class="book-btn" href="https://www.getyourguide.com/pt-br/bovec-l32330/-t1376207/" target="_blank">Ver no GetYourGuide</a>
       </div>
-      <p class="note">⚠️ Ingresso do rio (~€22/pessoa) não incluído — mencionado como obrigatório em todas as operadoras.</p>
+      <p class="note">⏭️ Não fizeram — mesmo caso, o canyoning ocupou o dia. Ingresso do rio (~€22/pessoa) não incluído.</p>
     </div>
 
     <div class="tour-card">
@@ -882,17 +871,17 @@
 
     <div class="tour-card">
       <span class="day-tag">Dias 24-25 · Bohinj</span>
-      <h3>Canyoning saindo de Bled, no Vale de Bohinj</h3>
+      <h3>Canyoning saindo de Bled, no Vale de Bohinj (GetYourGuide)</h3>
       <div class="meta"><span class="rating">⭐ 4,9</span><span>171 avaliações</span><span>3,5h</span><span>Busca no hotel inclusa</span></div>
       <p class="desc">Apesar do nome, o canyon em si fica no Vale de Bohinj — o guia busca em Bled (raio de 5km) e leva de van. Desce por rochas, pula em cachoeiras, nada em poças de água da montanha.</p>
       <div class="price-row">
         <span class="price">~€79 <span>por pessoa</span></span>
         <a class="book-btn" href="https://www.getyourguide.com/pt-br/bled-l1336/canyoning-lago-bled-eslovenia-t75504/" target="_blank">Ver no GetYourGuide</a>
       </div>
-      <p class="note">⚠️ Mínimo 10 anos e 1,40m de altura. Como parte do trajeto já é em Bohinj, dá pra considerar fazer nos dias em Bohinj em vez de Bled.</p>
+      <p class="note">⏭️ Não foi essa reserva que usaram — o canyoning real foi direto com a Soča Splash em Bovec (ver card no topo).</p>
     </div>
 
-    <div class="alert-card"><span class="icon">💡</span><p><strong>Cuidado com sobreposição:</strong> o canyoning saindo de Bled na verdade acontece em Bohinj — como agora vocês só ficam 2 noites lá (24-25), dá pra pensar nele como atividade extra do dia 25 em vez de somar com Vogel/Savica/caiaque no lago, pra não lotar o dia.</p></div>
+    <div class="alert-card"><span class="icon">💡</span><p><strong>Registro:</strong> o canyoning com Soča Splash acabou sendo o destaque da viagem — talvez valha priorizar essa agência em cima das opções do GetYourGuide numa próxima vez, já que a experiência real bateu melhor que o esperado.</p></div>
   </div>
 
 </main>
@@ -974,22 +963,17 @@
     const points = [
       {lat:46.3688, lng:14.1043, title:'Castelo de Bled', desc:'Pôr do sol, dia 22', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Bled+Castle+Slovenia'},
       {lat:46.3706, lng:14.1067, title:'Seliše RV Parking', desc:'Pernoite dia 22 · água, eletricidade, wi-fi', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Seli%C5%A1e+RV+parking+Bled+Slovenia'},
-      {lat:46.3925, lng:14.0964, title:'Vintgar Gorge', desc:'Trilha cedo pela manhã, dia 23', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Vintgar+Gorge+Slovenia'},
-      {lat:46.4553, lng:13.7756, title:'Cachoeira Pericnik', desc:'Parada na subida, dia 23 · 20-30min', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Pericnik+Waterfall+Slovenia'},
-      {lat:46.4839, lng:13.7797, title:'Lago Jasna', desc:'Parada rápida na subida, dia 23', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Lake+Jasna+Kranjska+Gora+Slovenia'},
-      {lat:46.4342, lng:13.7469, title:'Passo Vršič (1.611m)', desc:'Subida, dia 23 · 50 curvas', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Vrsic+Pass+Slovenia'},
-      {lat:46.3383, lng:13.5519, title:'Rio Soča (Bovec)', desc:'Rafting/caiaque, dia 24', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Soca+River+rafting+Bovec+Slovenia'},
-      {lat:46.2494, lng:13.5992, title:'Cachoeira Kozjak', desc:'Trilha em Kobarid, dia 24 · ~1h-1h30', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Kozjak+Waterfall+Kobarid+Slovenia'},
-      {lat:46.2489, lng:13.5786, title:'Gostilna Breza (Kobarid)', desc:'Refeição dia 24 · cozinha tradicional, sem reserva', cat:'restaurant', link:'https://www.google.com/maps/search/?api=1&query=Gostilna+Breza+Kobarid+Slovenia'},
-      {lat:46.2497, lng:13.5722, title:'Camp Koren (Kobarid)', desc:'Pernoite dia 23 · recomendado, perto do Kozjak', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Koren+Kobarid+Slovenia'},
-      {lat:46.3406, lng:13.5461, title:'Camp Liza (Bovec)', desc:'Alternativa · confluência Soča/Koritnica', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Liza+Bovec+Slovenia'},
-      {lat:46.3378, lng:13.5528, title:'Camping Bovec (Alpi Center)', desc:'Alternativa · central em Bovec', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Alpi+Center+Camping+Bovec+Slovenia'},
-      {lat:46.3435, lng:13.5601, title:'Camper Stop PZA Bovec', desc:'Estacionamento oficial, máx. 48h · perto do teleférico Kanin', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Kanin+cable+car+parking+Bovec+Slovenia'},
-      {lat:46.2751, lng:13.9198, title:'Camp Danica', desc:'Pernoite dias 24-25 · Bohinjska Bistrica, 700 vagas', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Danica+Bohinjska+Bistrica+Slovenia'},
-      {lat:46.2779, lng:13.8724, title:'Camp Bohinj (Zlatorog)', desc:'Alternativa · à beira do lago (risco sem reserva)', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Bohinj+Zlatorog+Ukanc+Slovenia'},
-      {lat:46.2705, lng:13.9280, title:'🆘 Kozji hrbet (emergência)', desc:'Parada oficial de overflow, máx. 12h', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Kozji+hrbet+motorhome+parking+Bohinjska+Bistrica+Slovenia'},
-      {lat:46.2755, lng:13.8577, title:'Vogel Cable Car', desc:'Teleférico + trilha, dia 25', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Vogel+cable+car+Bohinj+Slovenia'},
-      {lat:46.3011, lng:13.8319, title:'Cachoeira Savica', desc:'Trilha curta, dia 25', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Savica+Waterfall+Slovenia'},
+      {lat:46.5069, lng:13.5789, title:'Tarvisio (Itália)', desc:'✅ Rota real, dia 23 — passagem pela Itália', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Tarvisio+Italy'},
+      {lat:46.4989, lng:13.6417, title:'Lagos de Fusine', desc:'✅ Destaque da rota real, dia 23', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Laghi+di+Fusine+Italy'},
+      {lat:46.3383, lng:13.5519, title:'Canyoning Soča Splash', desc:'✅ Feito, dia 24 · destaque da viagem', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=So%C4%8Da+Splash+Bovec+Slovenia'},
+      {lat:46.2494, lng:13.5992, title:'Cachoeira Kozjak', desc:'🚶 Parcial, dia 24 · voltaram na parte da floresta', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Kozjak+Waterfall+Kobarid+Slovenia'},
+      {lat:46.2497, lng:13.5722, title:'Camp Koren (Kobarid)', desc:'Opção de camping no Soča — referência', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Koren+Kobarid+Slovenia'},
+      {lat:46.3406, lng:13.5461, title:'Camp Liza (Bovec)', desc:'Opção de camping no Soça — referência', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Camp+Liza+Bovec+Slovenia'},
+      {lat:46.3435, lng:13.5601, title:'Camper Stop PZA Bovec', desc:'Opção de estacionamento oficial — referência', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Kanin+cable+car+parking+Bovec+Slovenia'},
+      {lat:46.4083, lng:13.9308, title:'Soriška Planina', desc:'✅ Onde dormiram, dias 24-25 · perto do Slatnik', cat:'sleep', link:'https://www.google.com/maps/search/?api=1&query=Soriska+planina+camping+Slovenia'},
+      {lat:46.4056, lng:13.9250, title:'Slatnik + Lajnar', desc:'✅ Feito, dia 25 · trilha de cume', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Slatnik+Lajnar+trail+Soriska+planina+Slovenia'},
+      {lat:46.2755, lng:13.8577, title:'Vogel Cable Car', desc:'⏭️ Pulado, dia 25 · muito lotado', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Vogel+cable+car+Bohinj+Slovenia'},
+      {lat:46.3011, lng:13.8319, title:'Cachoeira Savica', desc:'⏭️ Pulado, dia 25 · faltou tempo', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Savica+Waterfall+Slovenia'},
       {lat:46.0489, lng:14.5085, title:'Castelo de Ljubljana', desc:'Dia 26, depois da devolução da van', cat:'nature', link:'https://www.google.com/maps/search/?api=1&query=Ljubljana+Castle+Slovenia'}
     ];
 
